@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.ads.AdsViewModel" />
+
+    </data>
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="false">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:orientation="horizontal"
+            app:items="@{viewmodel.adsList}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:context=".modules.ads.AdsActivity">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout>
+</layout>

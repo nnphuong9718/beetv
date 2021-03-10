@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timezones>
+    <timezone id="Etc/GMT+12">UTC-12:00 지역별 시간대</timezone>
+    <timezone id="Pacific/Midway">UTC-11:00 미드웨이, 사모아 제도</timezone>
+    <timezone id="Pacific/Honolulu">UTC-10:00 하와이주</timezone>
+    <timezone id="America/Anchorage">UTC-09:00 알래스카</timezone>
+    <timezone id="America/Los_Angeles">UTC-08:00 태평양 시간대 (미국,캐나다)</timezone>
+    <timezone id="America/Chihuahua">UTC-07:00 산지시간대 (미국,캐나다)</timezone>
+    <timezone id="America/Chicago">UTC-06:00 중부시간대 (미국,캐나다), 멕시코시티</timezone>
+    <timezone id="America/New_York">UTC-05:00 동부시간대 (미국,캐나다), 보고타, 리마</timezone>
+    <timezone id="America/Caracas">UTC-04:00 대서양시간대 (캐나다), 카라카스</timezone>
+    <timezone id="America/St_Johns">UTC-03:30 뉴펀들랜드</timezone>
+    <timezone id="America/Sao_Paulo">UTC-03:00 브라질, 부에노스아이레스, 조지타운</timezone>
+    <timezone id="Atlantic/South_Georgia">UTC-02:00 중대서양</timezone>
+    <timezone id="Atlantic/Azores">UTC-01:00 아소르스 제도, 카보베르데 제도</timezone>
+    <timezone id="Europe/London">UTC-00:00 서유럽시간대, 런던, 카사블랑카</timezone>
+    <timezone id="Europe/Amsterdam">UTC+01:00 중유럽시간대, 앙골라, 리비아</timezone>
+    <timezone id="Asia/Beirut">UTC+02:00 동유럽시간대, 카이로, 아테네</timezone>
+    <timezone id="Europe/Istanbul">UTC+03:00 바그다드, 쿠웨이트, 모스크바</timezone>
+    <timezone id="Asia/Tehran">UTC+03:30 테헤란</timezone>
+    <timezone id="Asia/Dubai">UTC+04:00 아부다비, 무스카트, 바쿠</timezone>
+    <timezone id="Asia/Kabul">UTC+04:30 카블</timezone>
+    <timezone id="Asia/Karachi">UTC+05:00 예카테린부르크, 이슬라마바드, 카라치, 타슈켄트</timezone>
+    <timezone id="Asia/Colombo">UTC+05:30 뭄바이, 콜카타, 뉴델리</timezone>
+    <timezone id="Asia/Almaty">UTC+06:00 알마티, 다카, 콜롬보</timezone>
+    <timezone id="Asia/Bangkok">UTC+07:00 방콕, 하노이, 자카르타 </timezone>
+    <timezone id="Asia/Shanghai">UTC+08:00 북경, 충경, 홍콩, 싱가폴 </timezone>
+    <timezone id="Asia/Seoul">UTC+09:00 동경, 서울, 오사카, 야쿠츠크</timezone>
+    <timezone id="Australia/Adelaide">UTC+09:30 애들레이드, 다윈</timezone>
+    <timezone id="Pacific/Guam">UTC+10:00 시드니, 괌</timezone>
+    <timezone id="Asia/Magadan">UTC+11:00 마가단, 솔로몬제도</timezone>
+    <timezone id="Pacific/Auckland">UTC+12:00 오클랜드, 웰링턴, 캄차카 반도</timezone>
+</timezones>

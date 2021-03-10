@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2019 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">모닝TV</string>
+    <string name="no_data">No data</string>
+    <string name="loading">LOADING</string>
+    <string name="realtime_broadcasting">Live</string>
+    <string name="movie">Movie</string>
+    <string name="drama">Drama</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="preview_education">Education</string>
+    <string name="child">Kids</string>
+    <string name="search">Search</string>
+    <string name="favorites">Favorites</string>
+    <string name="playback_record">Playback</string>
+    <string name="setting">Setting</string>
+    <string name="name">Name</string>
+    <string name="director">Director</string>
+    <string name="actor">Actor</string>
+    <string name="type">Type</string>
+    <string name="area">Area</string>
+    <string name="year">Year</string>
+    <string name="summary">Summary</string>
+    <string name="play">Play</string>
+    <string name="a_en">a</string>
+    <string name="b_en">b</string>
+    <string name="c_en">c</string>
+    <string name="d_en">d</string>
+    <string name="e_en">e</string>
+    <string name="f_en">f</string>
+    <string name="g_en">g</string>
+    <string name="h_en">h</string>
+    <string name="i_en">i</string>
+    <string name="j_en">j</string>
+    <string name="k_en">k</string>
+    <string name="l_en">l</string>
+    <string name="m_en">m</string>
+    <string name="n_en">n</string>
+    <string name="o_en">o</string>
+    <string name="p_en">p</string>
+    <string name="q_en">q</string>
+    <string name="r_en">r</string>
+    <string name="s_en">s</string>
+    <string name="t_en">t</string>
+    <string name="u_en">u</string>
+    <string name="v_en">v</string>
+    <string name="w_en">w</string>
+    <string name="x_en">x</string>
+    <string name="y_en">y</string>
+    <string name="z_en">z</string>
+    <string name="zero">0</string>
+    <string name="nine">9</string>
+    <string name="eight">8</string>
+    <string name="seven">7</string>
+    <string name="six">6</string>
+    <string name="five">5</string>
+    <string name="four">4</string>
+    <string name="three">3</string>
+    <string name="two">2</string>
+    <string name="one">1</string>
+    <string name="empty">Empty</string>
+    <string name="delete">Delete</string>
+    <string name="korean">Korean</string>
+    <string name="english">English</string>
+    <string name="search_result">Search result</string>
+    <string name="confirm">Confirm</string>
+    <string name="a_ko">ㄱ</string>
+    <string name="b_ko">ㄲ</string>
+    <string name="c_ko">ㄴ</string>
+    <string name="d_ko">ㄷ</string>
+    <string name="e_ko">ㄸ</string>
+    <string name="f_ko">ㄹ</string>
+    <string name="g_ko">ㅁ</string>
+    <string name="h_ko">ㅂ</string>
+    <string name="i_ko">ㅃ</string>
+    <string name="j_ko">ㅅ</string>
+    <string name="k_ko">ㅆ</string>
+    <string name="l_ko">ㅇ</string>
+    <string name="m_ko">ㅈ</string>
+    <string name="n_ko">ㅉ</string>
+    <string name="o_ko">ㅊ</string>
+    <string name="p_ko">ㅋ</string>
+    <string name="q_ko">ㅌ</string>
+    <string name="r_ko">ㅍ</string>
+    <string name="s_ko">ㅎ</string>
+    <string name="t_ko">1</string>
+    <string name="u_ko">2</string>
+    <string name="v_ko">3</string>
+    <string name="w_ko">4</string>
+    <string name="x_ko">5</string>
+    <string name="y_ko">6</string>
+    <string name="z_ko">7</string>
+    <string name="three_ko">0</string>
+    <string name="two_ko">9</string>
+    <string name="one_ko">8</string>
+    <string name="four_ko">ㅜ</string>
+    <string name="all">All</string>
+    <string name="aspect_ratio">Screen Ratio</string>
+    <string name="player">Player</string>
+    <string name="language">Language</string>
+    <string name="slot">Time</string>
+    <string name="id">ID</string>
+    <string name="service_life">Expired</string>
+    <string name="authority">Login</string>
+    <string name="logout">Logout</string>
+    <string name="would_you_like_to_log_out">Would you like to log out?</string>
+    <string name="are_you_sure_you_want_to_log_out">Are you sure you want to quit?</string>
+    <string name="cancel">Cancel</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="go_back">Back</string>
+    <string name="sign_up">회원가입</string>
+    <string name="register_successfully">Register successfully</string>
+    <string name="login_successfully">You are logged in.</string>
+    <string name="english_ko">English</string>
+    <string name="empty_id_message">ID cannot be empty</string>
+    <string name="empty_password_message">Password cannot be empty</string>
+    <string name="service_remaining_period" formatted="true">%d days</string>
+    <string name="format_dates" formatted="true">%d days</string>
+    <string name="format_date" formatted="true">%d day</string>
+    <string name="empty_keyword_message">Keyword cannot be empty</string>
+    <string name="error_password_incorrect">Password is incorrect</string>
+    <string name="error_id_incorrect">ID is incorrect</string>
+    <string name="unfavorite">Unfavorite</string>
+    <string name="enter_search_team_to_see_result_here">Enter search term/word to see result here</string>
+    <string name="text_search_not_found">No data. Search with another term?</string>
+    <string name="text_no_data_found">No data found!</string>
+    <string name="require_login">Please login to use this function\n Do you want to login?</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+    <string name="error_upgrade_account">Please upgrade your account to play this media</string>
+    <string name="automatic_resolution" translatable="false">Automatic</string>
+    <string name="title_resolution" translatable="false">Resolution</string>
+    <string name="message_double_back_to_exit">Press one more to exit</string>
+    <string name="space">Space</string>
+    <string name="retry">Retry</string>
+    <string name="no_internet_connection">Server connection failed. Connect again after connecting to the Internet</string>
+    <string name="text_service_period_expired">Service period expired</string>
+    <string name="exit">Exit</string>
+    <string name="playlist">Playlist</string>
+    <string name="update_order">Latest</string>
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core
+        functionality.</string>
+    <string name="permission_rationale">Location permission is needed for core functionality</string>
+    <string name="settings">Settings</string>
+    <string name="play_from_you_end">Play from where you ended</string>
+
+    <string name="play_from_you_start">Play from the beginning</string>
+    <string name="format_speed_video" formatted="true"> %s kb/s</string>
+    <string name="format_speed_video_text" formatted="true">영상소스</string>
+    <string name="popular_order">Popular</string>
+    <string name="error_cannot_play">Cannot play this live</string>
+    <string name="delete_favorite">Delete favorite</string>
+    <string name="delete_playback">Delete record</string>
+    <string name="sytem_time">System time zone (Recommended)</string>
+    <string name="system_player">System player</string>
+    <string name="charge">Charge</string>
+    <string name="version">Version %s</string>
+    <string name="confirm_delete_history">Do you want to remove all playbacks?</string>
+    <string name="confirm_delete_favorite">Do you want to remove all favorites?</string>
+    <string name="free">FREE</string>
+    <string name="remaining_date">Remaining: </string>
+    <string name="time">Time</string>
+    <string name="notice_text">NOTICE</string>
+    <string name="expiration1">The viewing time is running out.</string>
+    <string name="expiration3">Service period has expired.</string>
+    <string name="expiration2">Please charge in advance.</string>
+    <string name="manager_phone">Charging inquiry: %s</string>
+    <string name="Etc_GMT_12">(GMT -12:00) Dateline West</string>
+    <string name="Pacific_Midway">(GMT -11:00) Midway Island, Samoa</string>
+    <string name="Pacific_Honolulu">(GMT -10:00) Hawaii</string>
+    <string name="America_Anchorage">(GMT -09:00) Alaska</string>
+    <string name="America_Los_Angeles">(GMT -08:00) Pacific Time (US &amp; Canada)</string>
+    <string name="America_Chihuahua">(GMT -07:00) Mountain Time (US &amp; Canada)</string>
+    <string name="America_Chicago">(GMT -06:00) Central Time (US &amp; Canada), Mexico City</string>
+    <string name="America_New_York">(GMT -05:00) Eastern Time (US &amp; Canada), Bogota, Lima</string>
+    <string name="America_Caracas">(GMT -04:00) Atlantic Time (Canada), La Paz, Santiago</string>
+    <string name="America_St_Johns">(GMT -03:30) Newfoundland</string>
+    <string name="America_Sao_Paulo">(GMT -03:00) Brazil. Buenos Aires, Georgetown</string>
+    <string name="Atlantic_South_Georgia">(GMT -02:00) Mid-Atlantic</string>
+    <string name="Atlantic_Azores">(GMT -01:00) Azores, Cape Verde Islands</string>
+    <string name="Europe_London">(GMT 00:00) Western European Time, London, Lisbon, Casablanca</string>
+    <string name="Europe_Amsterdam">(GMT +01:00) Central European Time, Angola, Libya</string>
+    <string name="Asia_Beirut">(GMT +02:00) Kaliningrad, South Africa, Cairo, Athens</string>
+    <string name="Europe_Istanbul">(GMT +03:00) Baghdad, Riyadh, Moscow</string>
+    <string name="Asia_Tehran">(GMT +03:30) Tehran</string>
+    <string name="Asia_Dubai">(GMT +04:00) Abu Dhabi, Muscat Baku</string>
+    <string name="Asia_Kabul">(GMT +04:30) Kabul</string>
+    <string name="Asia_Karachi">(GMT +05:00) Ekaterinburg, Islamabad, Karachi, Tashkent</string>
+    <string name="Asia_Colombo">(GMT +05:30) Mumbai, Kolkata, Chennai, New Delhi</string>
+    <string name="Asia_Almaty">(GMT +06:00) Almaty, Dhaka, Colombo</string>
+    <string name="Asia_Bangkok">(GMT +07:00) Bangkok, Hanoi, Jakarta</string>
+    <string name="Asia_Shanghai">(GMT +08:00) Beijing, Chongqing, Hong Kong, Singapore</string>
+    <string name="Asia_Seoul">(GMT +09:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</string>
+    <string name="Australia_Adelaide">(GMT +09:30) Adelaide, Darwin</string>
+    <string name="Pacific_Guam">(GMT +10:00) Eastern Australia, Guam, Vladivostok</string>
+    <string name="Asia_Magadan" translatable="false">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</string>
+    <string name="Pacific_Auckland">(GMT +12:00) Auckland, Wellington, Kamchatka Peninsula</string>
+    <string name="notice">Notice</string>
+    <string name="please_watch_after_updating_the_latest_version.">Please watch after updating the latest version.</string>
+    <string name="storage_access_required" translatable="false">Storage access is required to downloading the file.</string>
+    <string name="storage_permission_denied" translatable="false">Storage permission request was denied.</string>
+    <string name="video_file_unavailable">Video file is unavailable now.</string>
+    <string name="no_cards">N/A</string>
+    <string name="expired">Expired</string>
+    <string name="text_expand_playback">Expand playback</string>
+</resources>

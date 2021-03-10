@@ -1,0 +1,369 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextureView
+        android:id="@+id/textureview"
+        android:layout_width="wrap_content"
+        android:focusable="false"
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:focusable="false"
+        android:indeterminate="false"
+        tools:visibility="visible"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_play_icon"
+        android:layout_width="@dimen/size_100"
+        android:layout_height="@dimen/size_100"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:src="@drawable/ic_play_video" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:focusable="false"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/exo_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:focusable="false"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical">
+
+            <RelativeLayout
+                android:id="@+id/movie_control_layout"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:focusable="false"
+                android:layout_width="match_parent"
+                android:background="#CC000000"
+                android:layout_height="88dp">
+
+                <com.example.android.architecture.blueprints.beetv.modules.player.components.TimeBar
+                    android:id="@+id/exo_progress"
+                    android:background="#55000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:focusable="false"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:paddingStart="0dp"
+                    />
+                <TextView
+                    android:id="@+id/exo_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/player_title"
+                    android:layout_toStartOf="@+id/tv_type_movie"
+                    android:focusable="false"
+                    android:textSize="22sp"
+                    android:paddingLeft="44dp"
+                    android:text="" />
+
+
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="VOD"
+                    android:visibility="visible"
+                    android:id="@+id/tv_type_movie"
+                    android:textSize="22sp"
+                    android:focusable="false"
+                    android:textColor="@color/white" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="end"
+                    android:focusable="false"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/tv_type_movie"
+                    android:layout_marginRight="@dimen/size_24">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/exo_position"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:focusable="false"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:text="12:12:12"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:focusable="false"
+                            android:textSize="20sp"
+                            android:text="/" />
+                        <TextView
+                            android:id="@+id/exo_duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:focusable="false"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:text="12:12:12"/>
+
+                    </LinearLayout>
+                    <ProgressBar
+                        android:id="@+id/progress_vod"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="166dp"
+                        android:layout_height="@dimen/size_16"
+                        android:layout_marginTop="@dimen/size_8"
+                        android:focusable="false"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/bg_progress_channel"
+                        tools:layout_width="166dp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/iv_movie_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
+                    android:layout_alignParentTop="true"
+                    android:foregroundGravity="bottom"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:src="@drawable/indicator_live_loading"
+                    android:layout_height="4dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/live_control_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="4dp"
+                android:focusable="false"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/live_control_layout_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_90"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:background="#CC000000"
+                    android:focusable="false"
+                    android:gravity="center_vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:id="@+id/bt_favorite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:focusable="true"
+                        android:paddingRight="@dimen/size_16"
+                        android:src="@drawable/ic_scrap"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:paddingEnd="@dimen/size_16"
+                            android:layout_weight="1"
+                            android:layout_toStartOf="@+id/tv_live"
+                            android:focusable="false"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:id="@+id/iv_logo"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                android:focusable="false"
+                                android:layout_marginLeft="@dimen/size_30"
+                                android:layout_marginRight="@dimen/size_16"
+                                android:textColor="@android:color/holo_blue_dark"
+                                tools:src="@drawable/logo" />
+                            <TextView
+                                android:id="@+id/tv_channel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:textSize="26sp"
+                                android:layout_marginRight="6dp"
+                                android:textColor="@color/player_title"
+                                tools:text="01" />
+
+                            <TextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:focusable="false"
+                                android:maxLines="1"
+                                android:textSize="26sp"
+                                android:textColor="@color/player_title"
+                                tools:text="" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_live"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:text="LIVE"
+                            android:textSize="26sp"
+                            android:textColor="@color/white"
+                            android:visibility="visible" />
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:focusable="false"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:orientation="horizontal"
+                            android:paddingRight="@dimen/size_50">
+
+                            <LinearLayout
+                                android:id="@+id/layoutLine1"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:focusable="false"
+                                android:visibility="gone"
+                                android:paddingLeft="@dimen/size_40"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    android:id="@+id/tv_name_program_current"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:focusable="false"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/white"
+                                    tools:text="" />
+
+                                <TextView
+                                    android:id="@+id/tv_name_program_next"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:focusable="false"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:textAlignment="textStart"
+                                    android:textSize="18sp"
+                                    android:textColor="#55FFFFFF"
+                                    tools:text="" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layoutLine2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:focusable="false"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <ProgressBar
+                                    android:id="@+id/progress"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="@dimen/size_140"
+                                    android:layout_height="@dimen/size_10"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:focusable="false"
+                                    android:max="100"
+
+                                    android:paddingLeft="28dp"
+                                    android:progress="45"
+                                    android:progressDrawable="@drawable/bg_progress_channel"
+                                    tools:layout_width="@dimen/size_140" />
+                                <ProgressBar
+                                    android:id="@+id/progress2"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="@dimen/size_140"
+                                    android:layout_height="@dimen/size_10"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:focusable="false"
+                                    android:max="0"
+                                    android:paddingLeft="28dp"
+                                    android:progress="45"
+                                    android:layout_marginTop="@dimen/size_20"
+                                    android:progressDrawable="@drawable/bg_progress_channel_none"
+                                    tools:layout_width="@dimen/size_140"
+
+                                    tools:text="dsadsadsa" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_live_video_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="4dp"
+                    android:layout_alignTop="@+id/live_control_layout_content"
+                    android:layout_centerHorizontal="true"
+                    android:foregroundGravity="bottom"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:src="@drawable/indicator_live_loading"
+                    android:visibility="invisible"
+                    tools:visibility="visible" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+</merge>

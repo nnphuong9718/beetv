@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="480dp"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:clipChildren="false"
+    android:gravity="center"
+    android:layout_centerInParent="true"
+    android:background="@drawable/bg_black_opacity_stroke_black_2">
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:gravity="center"
+        android:focusable="false"
+        android:text="@string/confirm_delete_history"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/white" />
+
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:id="@+id/bt_confirm"
+        android:layout_width="@dimen/size_120"
+        android:layout_height="48dp"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginBottom="64dp"
+        android:layout_marginStart="@dimen/size_110"
+        android:background="@color/chapter_bkg_color"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:text="@string/confirm"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/alto" />
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:id="@+id/bt_cancel"
+        android:layout_width="@dimen/size_120"
+        android:layout_height="48dp"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginStart="@dimen/size_20"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_toEndOf="@+id/bt_confirm"
+        android:background="@color/chapter_bkg_color"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:text="@string/cancel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/alto" />
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+</com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout>

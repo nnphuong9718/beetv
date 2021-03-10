@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="click"
+            type="com.example.android.architecture.blueprints.beetv.modules.register.RegisterFragment.ClickProxy" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.register.RegisterViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:focusable="false"
+        android:layout_height="match_parent">
+
+        <com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout
+            android:id="@+id/main"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_mineshaft_stroke_tundora"
+            android:gravity="center"
+            android:focusable="false"
+            android:padding="@dimen/size_50">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:focusable="false"
+                android:text="@string/sign_up"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/white" />
+
+            <TableLayout
+                android:id="@+id/layoutEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginTop="@dimen/size_30"
+                android:focusable="false">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:gravity="end"
+                        android:text="@string/id"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:layout_width="400dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="@dimen/size_20"
+                        android:background="@color/alto"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="@dimen/size_16"
+                        android:text="11111111@qq.com"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/black" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="@dimen/size_20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:text="@string/password"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:layout_width="400dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="@dimen/size_20"
+                        android:background="@color/alto"
+                        android:inputType="textPassword"
+                        android:paddingHorizontal="@dimen/size_16"
+                        android:text="123456"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/black" />
+                </TableRow>
+            </TableLayout>
+
+
+            <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+                android:id="@+id/bt_back"
+                android:layout_width="@dimen/size_180"
+                android:layout_height="@dimen/size_80"
+                android:layout_below="@+id/layoutEditText"
+                android:layout_marginStart="@dimen/size_60"
+                android:layout_marginTop="@dimen/size_50"
+                android:onClick="@{()->click.login()}"
+                android:background="@color/black"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:focusable="false"
+                    android:text="@string/go_back"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/alto" />
+            </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+
+            <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+                android:id="@+id/bt_confirm"
+                android:layout_width="@dimen/size_180"
+                android:layout_height="@dimen/size_80"
+                android:layout_below="@+id/layoutEditText"
+                android:layout_marginStart="@dimen/size_20"
+                android:layout_marginTop="@dimen/size_50"
+                android:layout_toEndOf="@+id/bt_back"
+                android:onClick="@{()->click.register()}"
+                android:background="@color/black"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:focusable="false"
+                    android:text="@string/confirm"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/alto" />
+            </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+
+        </com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout>
+
+    </RelativeLayout>
+</layout>
+

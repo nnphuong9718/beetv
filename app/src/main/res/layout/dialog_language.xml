@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:background="@drawable/bg_black_opacity_stroke_black_2">
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_50"
+        android:layout_marginTop="@dimen/size_32"
+        android:focusable="false"
+        android:text="@string/language"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white" />
+
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:id="@+id/bt_korean"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_40"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="@dimen/size_24"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/size_50"
+            android:focusable="false"
+            android:text="@string/korean"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white" />
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:id="@+id/bt_english"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_40"
+        android:layout_below="@+id/bt_korean"
+        android:layout_marginBottom="@dimen/size_100"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/size_50"
+            android:focusable="false"
+            android:text="@string/english_ko"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white" />
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+</com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout>

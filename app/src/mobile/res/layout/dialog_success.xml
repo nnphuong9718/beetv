@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_black_opacity_stroke_black_2"
+        android:focusable="false"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="@dimen/size_150"
+            android:layout_height="@dimen/size_150"
+            android:layout_marginHorizontal="@dimen/size_200"
+            android:layout_marginTop="64dp"
+            android:focusable="false"
+            android:src="@drawable/ic_login_success" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size_30"
+            android:layout_marginBottom="64dp"
+            android:focusable="false"
+            android:text="@string/login_successfully"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+</LinearLayout>

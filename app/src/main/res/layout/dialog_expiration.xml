@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="450dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_black_opacity_stroke_black_2"
+    android:focusable="false"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/size_50">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/alto"
+        android:textSize="35sp"
+        android:focusable="false"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/size_50"
+        android:text="@string/notice_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:focusable="false"
+        android:layout_marginTop="@dimen/size_20"
+        android:id="@+id/expiration_text"
+        android:text="@string/expiration1"
+        android:textAlignment="center"
+        android:textSize="19sp"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:focusable="false"
+        android:text="@string/expiration2"
+        android:textAlignment="center"
+        android:textSize="19sp"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/expiration_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size_16"
+        android:focusable="false"
+        android:text="@string/manager_phone"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="19sp"
+        android:textColor="@color/white" />
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:id="@+id/bt_confirm"
+        android:layout_width="@dimen/size_150"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginBottom="@dimen/size_50"
+        android:background="@color/alto"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:text="@string/confirm"
+            android:textSize="22sp"
+            android:textColor="@color/black" />
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+</com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderLinearLayout>

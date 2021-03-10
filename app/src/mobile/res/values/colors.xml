@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2019 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <color name="colorPrimary">#FFFFF0</color>
+    <color name="colorPrimaryDark">#263238</color>
+    <color name="colorAccent">#2E7D32</color>
+    <color name="colorTextPrimary">#000000</color>
+    <color name="colorGrey">#757575</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="playback_bkg">#88000000</color>
+    <color name="alto">#D1D1D1</color>
+    <color name="mineShaft">#1F1F1F</color>
+    <color name="sunsetOrange">#FF513D</color>
+    <color name="fern">#59AF5A</color>
+    <color name="deepCerulean">#006EB3</color>
+    <color name="yellow">#FBCA5C</color>
+    <color name="tundora">#4B4B4B</color>
+    <color name="boulder">#7A7A7A</color>
+    <color name="gray">#7B7B7B</color>
+    <color name="mineShaft3">#333333</color>
+    <drawable name="completedTaskBackground">#CCCCCC</drawable>
+    <color name="played_color">#33E5492A</color>
+    <color name="unplayed_color">#44000000</color>
+    <drawable name="touchFeedback">#CFD8DC</drawable>
+
+    <color name="button_text_focus">#1F1F1F</color>
+    <color name="button_text_unfocus">#D1D1D1</color>
+    <color name="button_text_disable">#555555</color>
+    <color name="button_background_focus">#D1D1D1</color>
+    <color name="button_background_unfocus">#000000</color>
+    <color name="chapter_text_focus">#FF513D</color>
+    <color name="chapter_text_unfocus">#FFFFFF</color>
+    <color name="im_icon_focus">#1F1F1F</color>
+    <color name="im_icon_unfocus">#D1D1D1</color>
+    <color name="focus_color">#FF513D</color>
+    <color name="unfocus_color">#1F1F1F</color>
+    <color name="chapter_bkg_color">#1F1F1F</color>
+
+</resources>

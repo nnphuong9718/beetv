@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/previous_song"
+        android:text="Previous"
+        style="@style/textButton"
+        android:drawableTop="@drawable/sound_effect"/>
+
+    <TextView
+        android:id="@+id/pause"
+        style="@style/textButton"
+        android:drawableTop="@drawable/repeat"
+        android:text="Pause"/>
+
+    <TextView
+        android:id="@+id/next_song"
+        style="@style/textButton"
+        android:drawableTop="@drawable/next_song"
+        android:text="Next"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/sound_effect"
+        android:text="音效"
+        style="@style/textButton"
+        android:drawableTop="@drawable/sound_effect"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/yuan_ban"
+        style="@style/textButton"
+        android:drawableTop="@drawable/yuan_ban"
+        android:text="原伴唱"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/song_list"
+        style="@style/textButton"
+        android:drawableTop="@drawable/song_list"
+        android:text="歌单"/>
+</LinearLayout>

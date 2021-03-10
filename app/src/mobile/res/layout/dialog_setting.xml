@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="640dp"
+    android:focusable="false"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_black_opacity_stroke_black_2">
+    <com.example.android.architecture.blueprints.beetv.widgets.SettingItemView
+        android:id="@+id/bt_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_30"
+        android:focusable="true"
+        android:nextFocusDown="@id/bt_language"
+        app:settingIcon="@drawable/ic_screen"
+        android:nextFocusRight="@id/bt_player"
+        app:settingName="@string/aspect_ratio" />
+
+
+    <com.example.android.architecture.blueprints.beetv.widgets.SettingItemView
+        android:id="@+id/bt_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_screen"
+        android:layout_marginStart="@dimen/size_30"
+        android:nextFocusUp="@id/bt_screen"
+        android:layout_marginTop="@dimen/size_20"
+        android:nextFocusRight="@id/bt_slot"
+        android:nextFocusDown="@id/bt_charge"
+        android:focusable="true"
+        app:settingIcon="@drawable/ic_language"
+        app:settingName="@string/language" />
+
+    <com.example.android.architecture.blueprints.beetv.widgets.SettingItemView
+        android:id="@+id/bt_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_20"
+        android:layout_marginTop="@dimen/size_30"
+        android:nextFocusLeft="@id/bt_screen"
+        android:layout_toEndOf="@+id/bt_screen"
+        android:nextFocusDown="@id/bt_slot"
+        android:nextFocusRight="@id/bt_favorite"
+        android:focusable="true"
+        app:settingIcon="@drawable/ic_player"
+        app:settingName="@string/player" />
+
+    <com.example.android.architecture.blueprints.beetv.widgets.SettingItemView
+        android:id="@+id/bt_slot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_20"
+        android:layout_marginTop="@dimen/size_20"
+        android:nextFocusLeft="@id/bt_language"
+        android:nextFocusRight="@id/bt_playback"
+        android:nextFocusUp="@id/bt_player"
+        android:layout_below="@id/bt_player"
+        android:layout_toEndOf="@id/bt_language"
+        android:nextFocusDown="@id/bt_charge"
+        android:focusable="true"
+        app:settingIcon="@drawable/ic_time"
+        app:settingName="@string/slot" />
+
+    <com.example.android.architecture.blueprints.beetv.widgets.SettingItemView
+        android:id="@+id/bt_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_20"
+        android:layout_marginTop="@dimen/size_30"
+        android:nextFocusLeft="@id/bt_player"
+        android:layout_toEndOf="@+id/bt_player"
+        android:nextFocusDown="@id/bt_playback"
+        android:focusable="true"
+        app:settingIcon="@drawable/ic_scrap_setting"
+        app:settingName="@string/delete_favorite" />
+
+    <com.example.android.architecture.blueprints.beetv.widgets.SettingItemView
+        android:id="@+id/bt_playback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_favorite"
+        android:layout_marginStart="@dimen/size_20"
+        android:layout_marginTop="@dimen/size_20"
+        android:nextFocusLeft="@id/bt_slot"
+        android:layout_toEndOf="@+id/bt_slot"
+        android:nextFocusUp="@id/bt_favorite"
+        android:nextFocusDown="@id/bt_log_out"
+        android:focusable="true"
+        app:settingIcon="@drawable/ic_history"
+        app:settingName="@string/delete_playback" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_1"
+        android:background="@color/chapter_bkg_color"
+        android:layout_below="@id/bt_language"
+        android:focusable="false"
+        android:layout_marginHorizontal="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_12"/>
+
+    <LinearLayout
+        android:id="@+id/layoutID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_language"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size_20"
+        android:focusable="false"
+        android:minWidth="350dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="250dp"
+            android:minWidth="300dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:focusable="false"
+            android:id="@+id/layoutAccount"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:focusable="false"
+                android:text="@string/id"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_id"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:focusable="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_vip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_black_radius_10"
+                android:paddingHorizontal="@dimen/size_20"
+                android:text="VIP"
+                android:focusable="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_5"
+            android:minWidth="350dp"
+            android:focusable="false"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:focusable="false"
+                android:text="@string/service_life"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_expired_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0000.00.00"
+                android:gravity="center"
+                android:focusable="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_number_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="000 일"
+                android:focusable="false"
+                android:layout_marginStart="@dimen/size_5"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:id="@+id/bt_authority"
+        android:layout_width="@dimen/size_150"
+        android:layout_height="48dp"
+        android:layout_below="@id/layoutID"
+        android:nextFocusLeft="@id/bt_charge"
+        android:nextFocusUp="@id/bt_playback"
+        android:nextFocusRight="@id/bt_playback"
+        android:layout_marginStart="@dimen/size_20"
+        android:layout_marginTop="@dimen/size_20"
+        android:layout_toEndOf="@+id/bt_charge"
+        android:background="@color/chapter_bkg_color"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:textAllCaps="true"
+            android:text="@string/authority"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/white" />
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:id="@+id/bt_log_out"
+        android:layout_width="@dimen/size_150"
+        android:layout_height="48dp"
+        android:layout_below="@id/layoutID"
+        android:layout_marginStart="@dimen/size_20"
+        android:nextFocusLeft="@id/bt_charge"
+        android:nextFocusUp="@id/bt_playback"
+        android:nextFocusRight="@id/bt_playback"
+        android:layout_marginTop="@dimen/size_20"
+        android:layout_toEndOf="@+id/bt_charge"
+        android:background="@color/chapter_bkg_color"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:text="@string/logout"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/white" />
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:id="@+id/bt_charge"
+        android:layout_width="@dimen/size_150"
+        android:layout_height="48dp"
+        android:layout_marginStart="160dp"
+        android:nextFocusRight="@id/bt_log_out"
+        android:nextFocusLeft="@id/bt_language"
+        android:nextFocusUp="@id/bt_slot"
+        android:layout_marginTop="@dimen/size_20"
+        android:layout_below="@id/layoutID"
+        android:background="@color/chapter_bkg_color"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:text="@string/charge"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/white" />
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/version"
+        android:layout_marginStart="160dp"
+        android:focusable="false"
+        android:layout_marginTop="@dimen/size_24"
+        android:layout_marginBottom="@dimen/size_30"
+        android:id="@+id/app_version"
+        android:layout_below="@id/bt_charge"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/white" />
+</com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout>

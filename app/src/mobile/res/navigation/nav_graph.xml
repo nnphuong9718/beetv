@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2019 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_fragment_dest">
+
+    <fragment
+        android:id="@+id/task_detail_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.taskdetail.TaskDetailFragment"
+        android:label="Task Details">
+        <action
+            android:id="@+id/action_taskDetailFragment_to_addEditTaskFragment"
+            app:destination="@id/add_edit_task_fragment_dest" />
+        <argument
+            android:name="taskId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_taskDetailFragment_to_tasksFragment"
+            app:destination="@id/tasks_fragment_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/statistics_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.statistics.StatisticsFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_statisticsFragment_to_tasksFragment"
+            app:destination="@id/tasks_fragment_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasks_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.tasks.TasksFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_tasksFragment_to_statisticsFragment"
+            app:destination="@id/statistics_fragment_dest" />
+        <action
+            android:id="@+id/action_tasksFragment_to_taskDetailFragment"
+            app:destination="@id/task_detail_fragment_dest" />
+        <action
+            android:id="@+id/action_tasksFragment_to_addEditTaskFragment"
+            app:destination="@id/add_edit_task_fragment_dest" />
+        <argument
+            android:name="userMessage"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_edit_task_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.addedittask.AddEditTaskFragment"
+        android:label="{title}">
+        <argument
+            android:name="taskId"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="false"
+            />
+        <action
+            android:id="@+id/action_addEditTaskFragment_to_tasksFragment"
+            app:destination="@id/tasks_fragment_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="type"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="none" />
+        <action
+            android:id="@+id/action_home_fragment_dest_to_menu_fragment_dest"
+            app:destination="@id/menu_fragment_dest" />
+        <action
+            android:id="@+id/action_home_fragment_dest_to_movie_detail_fragment_dest"
+            app:destination="@id/movie_detail_fragment_dest" />
+
+        <action
+            android:id="@+id/action_home_fragment_dest_to_search_fragment_dest"
+            app:destination="@id/search_fragment_dest" />
+
+        <action
+            android:id="@+id/action_home_fragment_dest_to_player_fragment"
+            app:destination="@id/player_fragment" />
+        <action
+            android:id="@+id/action_home_fragment_dest_to_favorite_fragment_dest"
+            app:destination="@id/favorite_fragment_dest" />
+        <action
+            android:id="@+id/action_home_fragment_dest_to_login_fragment_dest"
+            app:destination="@id/login_fragment_dest" />
+        <action
+            android:id="@+id/action_home_fragment_dest_to_movie_detail_fragment_dest2"
+            app:destination="@id/movie_detail_fragment_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.menu.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu">
+
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_menu_fragment_dest_to_home_fragment_dest"
+            app:destination="@id/home_fragment_dest" />
+        <action
+            android:id="@+id/action_menu_fragment_dest_to_movie_detail_fragment_dest"
+            app:destination="@id/movie_detail_fragment_dest" />
+        <action
+            android:id="@+id/action_menu_fragment_dest_to_search_fragment_dest"
+            app:destination="@id/search_fragment_dest" />
+        <action
+            android:id="@+id/action_menu_fragment_dest_to_search_fragment_dest2"
+            app:destination="@id/search_fragment_dest" />
+        <action
+            android:id="@+id/action_menu_fragment_dest_to_player_fragment"
+            app:destination="@id/player_fragment" />
+        <action
+            android:id="@+id/action_menu_fragment_dest_to_favorite_fragment_dest"
+            app:destination="@id/favorite_fragment_dest" />
+        <action
+            android:id="@+id/action_menu_fragment_dest_to_login_fragment_dest"
+            app:destination="@id/login_fragment_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/movie_detail_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.movie_detail.MovieDetailFragment"
+        android:label="Movie Detail">
+
+        <argument
+            android:name="movieID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_movie_detail_fragment_dest_to_home_fragment_dest"
+            app:destination="@id/home_fragment_dest" />
+        <action
+            android:id="@+id/action_movie_detail_fragment_dest_to_player_fragment"
+            app:destination="@id/player_fragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/search_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.search.SearchFragment"
+        android:label="Search">
+        <argument
+            android:name="type"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/action_search_fragment_dest_to_home_fragment_dest"
+            app:destination="@id/home_fragment_dest" />
+        <action
+            android:id="@+id/action_search_fragment_dest_to_menu_fragment_dest"
+            app:destination="@id/menu_fragment_dest" />
+        <action
+            android:id="@+id/action_search_fragment_dest_to_movie_detail_fragment_dest"
+            app:destination="@id/movie_detail_fragment_dest" />
+    </fragment>
+    <fragment
+        tools:label="Player"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.player.PlayerFragment"
+        android:id="@+id/player_fragment"
+        tools:layout="@layout/fragment_player">
+
+        <argument
+            android:name="movieID"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="videoID"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
+
+        <argument
+            android:name="liveID"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true"/>
+        <action
+            android:id="@+id/action_movie_player_fragment_dest_to_home_fragment_dest"
+            app:destination="@id/home_fragment_dest" />
+        <action
+            android:id="@+id/action_player_fragment_to_menu_fragment_dest"
+            app:destination="@id/menu_fragment_dest" />
+    </fragment>
+
+    <!--    <fragment-->
+    <!--        tools:label="Movie Detail"-->
+    <!--        android:name="com.example.android.architecture.blueprints.beetv.moviedetail.MovieDetailFragment"-->
+    <!--        android:id="@+id/movie_detail_fragment"-->
+    <!--        tools:layout="@layout/fragment_movie_detail">-->
+    <!--        <argument-->
+    <!--            android:name="movie"-->
+    <!--            app:argType="com.example.android.architecture.blueprints.beetv.data.models.Movie" />-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_movie_detail_fragment_to_home_fragment_dest"-->
+    <!--            app:destination="@id/home_fragment_dest" />-->
+    <!--    </fragment>-->
+    <fragment
+        android:id="@+id/favorite_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.favorite.FavoriteFragment"
+        android:label="Favorite">
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_favorite_fragment_dest_to_home_fragment_dest"
+            app:destination="@id/home_fragment_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/login_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.login.LoginFragment"
+        android:label="Login">
+
+        <action
+            android:id="@+id/action_login_fragment_dest_to_home_fragment_dest"
+            app:destination="@id/home_fragment_dest" />
+        <action
+            android:id="@+id/action_login_fragment_dest_to_register_fragment_dest"
+            app:destination="@id/register_fragment_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/register_fragment_dest"
+        android:name="com.example.android.architecture.blueprints.beetv.modules.register.RegisterFragment"
+        android:label="Register">
+
+        <action
+            android:id="@+id/action_register_fragment_dest_to_home_fragment_dest"
+            app:destination="@id/home_fragment_dest" />
+        <action
+            android:id="@+id/action_register_fragment_dest_to_login_fragment_dest"
+            app:destination="@id/login_fragment_dest" />
+    </fragment>
+    <argument
+        android:name="userMessage"
+        android:defaultValue="0" />
+</navigation>

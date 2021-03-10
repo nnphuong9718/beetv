@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.splash.SplashViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/container"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="@dimen/size_180"
+            android:layout_height="@dimen/size_180"
+            android:src="@drawable/img_logo"/>
+<!--        <ImageView-->
+<!--            android:layout_width="@dimen/size_100"-->
+<!--            android:layout_height="@dimen/size_50"-->
+<!--            android:src="@drawable/ic_beetv"/>-->
+    </LinearLayout>
+</layout>

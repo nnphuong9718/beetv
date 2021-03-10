@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:state_pressed="false" android:color="@color/chapter_text_focus" >
+        <shape
+            android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <corners android:radius="@dimen/size_30" />
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_pressed="true" android:color="@color/chapter_text_focus" >
+        <shape
+            android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <corners android:radius="@dimen/size_30" />
+        </shape>
+    </item>
+    <item android:state_focused="false" android:state_pressed="true" android:color="@color/chapter_text_unfocus" >
+        <shape
+            android:shape="rectangle">
+            <solid android:color="@color/mineShaft" />
+            <corners android:radius="@dimen/size_30" />
+        </shape>
+    </item>
+    <item >
+        <shape
+            android:shape="rectangle">
+            <solid android:color="@color/mineShaft" />
+            <corners android:radius="@dimen/size_30" />
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.favorite.FavoriteViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:focusable="false">
+
+        <LinearLayout
+            android:id="@+id/layoutTime"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/size_24"
+            android:background="@color/black"
+            android:focusable="false"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/size_24"
+                android:focusable="false"
+                android:textColor="@color/alto"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_8"
+                android:focusable="false"
+                android:paddingHorizontal="@dimen/size_24"
+                android:text="월요일\n2020.06.22"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/alto" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_menu_item"
+                android:layout_width="@dimen/size_150"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginVertical="@dimen/size_16"
+                android:clipToPadding="false"
+                android:focusable="false"
+                android:orientation="vertical"
+                android:paddingTop="0dp"
+                android:paddingBottom="15dp" />
+
+
+        </LinearLayout>
+
+
+
+        <com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/size_16"
+            android:layout_toEndOf="@+id/layoutTime"
+            android:layout_toRightOf="@+id/layoutTime"
+            android:clipToPadding="false"
+            android:focusable="false">
+
+            <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+                android:id="@+id/bt_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toStartOf="@+id/bt_favorite"
+                android:layout_toLeftOf="@+id/bt_favorite"
+                android:focusable="true">
+
+                <com.example.android.architecture.blueprints.beetv.widgets.FunctionItemView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:functionIcon="@drawable/ic_search"
+                    android:focusable="false"
+                    app:functionName="@string/search" />
+            </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+            <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+                android:id="@+id/bt_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toStartOf="@+id/bt_playback"
+                android:layout_toLeftOf="@+id/bt_playback"
+                android:focusable="true">
+
+                <com.example.android.architecture.blueprints.beetv.widgets.FunctionItemView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    app:functionIcon="@drawable/ic_scrap"
+                    app:functionName="@string/favorites" />
+            </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+
+            <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+                android:id="@+id/bt_playback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toStartOf="@+id/bt_setting"
+                android:layout_toLeftOf="@+id/bt_setting"
+                android:focusable="true">
+
+                <com.example.android.architecture.blueprints.beetv.widgets.FunctionItemView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:functionIcon="@drawable/ic_search"
+                    android:focusable="false"
+                    app:functionName="@string/playback_record" />
+            </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+            <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+                android:id="@+id/bt_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:focusable="true">
+
+                <com.example.android.architecture.blueprints.beetv.widgets.FunctionItemView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:functionIcon="@drawable/ic_setting"
+                    app:functionName="@string/setting" />
+            </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_detail_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/size_16"
+                android:layout_below="@+id/bt_search"
+                android:layout_gravity="center"
+                android:padding="@dimen/size_16"
+                android:background="@color/mineShaft"
+                android:clipToPadding="false"
+                android:focusable="false" />
+
+        </com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout>
+
+
+
+    </RelativeLayout>
+</layout>
+

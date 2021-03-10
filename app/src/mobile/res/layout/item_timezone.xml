@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_40"
+    android:id="@+id/main"
+    android:focusable="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="@dimen/size_50"
+        android:focusable="false"
+        android:id="@+id/tv_time"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/alto" />
+</com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>

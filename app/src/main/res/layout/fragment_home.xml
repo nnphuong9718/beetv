@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:clipChildren="false"
+        android:focusable="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_28"
+            android:focusable="false"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/size_20"
+            android:paddingRight="@dimen/size_16"
+            android:paddingBottom="@dimen/size_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text="@{viewmodel.time}"
+                android:textSize="38sp"
+                android:layout_marginTop="-38dp"
+                android:layout_marginBottom="-36dp"
+                android:layout_marginLeft="-2dp"
+                android:singleLine="true"
+                android:textColor="@color/alto" />
+
+            <TextView
+                android:id="@+id/tv_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text="@{viewmodel.id}"
+                android:textSize="14sp"
+                android:textColor="@color/alto" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text="@{viewmodel.dateExpired}"
+                android:textSize="14sp"
+                android:textColor="@color/alto" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|center"
+            android:layout_marginTop="@dimen/size_32"
+            android:layout_marginBottom="@dimen/size_16"
+            android:clipChildren="false"
+            android:focusable="false">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/bottom_category"
+                android:layout_below="@+id/notiLayout"
+                android:layout_marginHorizontal="@dimen/size_24"
+                android:clipChildren="false"
+                android:focusable="false">
+
+                <com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRecycleView
+                    android:id="@+id/rv_movie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:clipChildren="false"
+                    android:focusable="true"
+                    android:nextFocusLeft="@null"
+                    android:nextFocusRight="@null"
+                    android:orientation="horizontal"
+                    app:items="@{viewmodel.topMovieList}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_top_movie" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="550dp"
+                android:layout_below="@+id/menu_layout"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/size_40"
+                android:gravity="end"
+                android:id="@+id/notiLayout"
+                android:focusable="false"
+                android:layout_marginTop="38dp"
+                android:layout_height="wrap_content">
+
+                <HorizontalScrollView
+                    android:id="@+id/notiScrollview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:scrollbars="none">
+
+                    <TextView
+                        android:id="@+id/tvNoti"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:focusable="false"
+                        android:scrollHorizontally="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/sunsetOrange"
+                        />
+
+                </HorizontalScrollView>
+
+
+            </LinearLayout>
+
+            <com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderLinearLayout
+                android:id="@+id/menu_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/size_24"
+                android:clipChildren="false"
+                android:orientation="horizontal">
+
+                <com.example.android.architecture.blueprints.beetv.widgets.FunctionItemView
+                    android:id="@+id/bt_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:nextFocusLeft="@id/bt_search"
+                    android:onClick="@{()->click.openSearch()}"
+                    app:functionIcon="@drawable/ic_search"
+                    app:functionName="@string/search" />
+
+                <com.example.android.architecture.blueprints.beetv.widgets.FunctionItemView
+                    android:id="@+id/bt_favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:onClick="@{()->click.openFavorite()}"
+                    app:functionIcon="@drawable/ic_scrap"
+                    app:functionName="@string/favorites" />
+
+                <com.example.android.architecture.blueprints.beetv.widgets.FunctionItemView
+                    android:id="@+id/bt_playback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:onClick="@{()->click.openPlayback()}"
+                    app:functionIcon="@drawable/ic_player_home"
+                    app:functionName="@string/playback_record" />
+
+                <com.example.android.architecture.blueprints.beetv.widgets.FunctionItemView
+                    android:id="@+id/bt_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:nextFocusRight="@id/bt_setting"
+                    android:onClick="@{()->click.openSetting()}"
+                    app:functionIcon="@drawable/ic_setting"
+                    app:functionName="@string/setting" />
+
+
+            </com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderLinearLayout>
+
+            <com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderLinearLayout
+                android:id="@+id/bottom_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="@dimen/size_24"
+                android:clipChildren="false"
+                android:orientation="horizontal">
+
+                <com.example.android.architecture.blueprints.beetv.widgets.CategoryItemView
+                    android:id="@+id/bt_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="@dimen/size_7"
+                    android:layout_weight="1"
+                    android:clipChildren="false"
+                    android:focusable="true"
+                    android:nextFocusLeft="@id/bt_tv"
+                    android:onClick="@{()->click.openLiveMenu()}"
+                    android:padding="2dp"
+                    app:categoryName="@string/realtime_broadcasting"
+                    app:icon="@drawable/ic_tv" />
+
+                <com.example.android.architecture.blueprints.beetv.widgets.CategoryItemView
+                    android:id="@+id/bt_movie"
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="@dimen/size_7"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:onClick="@{()->click.openMovieMenu()}"
+                    android:padding="2dp"
+                    app:categoryName="@string/movie"
+                    app:icon="@drawable/ic_movie" />
+
+                <com.example.android.architecture.blueprints.beetv.widgets.CategoryItemView
+                    android:id="@+id/bt_drama"
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="@dimen/size_7"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:onClick="@{()->click.openDramaMenu()}"
+                    android:padding="2dp"
+                    app:categoryName="@string/drama"
+                    app:icon="@drawable/ic_drama" />
+
+                <com.example.android.architecture.blueprints.beetv.widgets.CategoryItemView
+                    android:id="@+id/bt_entertainment"
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="@dimen/size_7"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:onClick="@{()->click.openEntertainmentMenu()}"
+                    android:padding="2dp"
+                    app:categoryName="@string/entertainment"
+                    app:icon="@drawable/ic_entertainment" />
+
+                <com.example.android.architecture.blueprints.beetv.widgets.CategoryItemView
+                    android:id="@+id/bt_education"
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="@dimen/size_7"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:onClick="@{()->click.openEducationMenu()}"
+                    android:padding="2dp"
+                    app:categoryName="@string/preview_education"
+                    app:icon="@drawable/ic_current_affairs" />
+
+
+                <com.example.android.architecture.blueprints.beetv.widgets.CategoryItemView
+                    android:id="@+id/bt_children"
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="@dimen/size_7"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:nextFocusRight="@id/bt_children"
+                    android:onClick="@{()->click.openChildrenMenu()}"
+                    android:padding="2dp"
+                    app:categoryName="@string/child"
+                    app:icon="@drawable/ic_childrentv" />
+
+            </com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderLinearLayout>
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="click"
+            type="com.example.android.architecture.blueprints.beetv.modules.home.HomeFragment.ClickProxy" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.home.HomeViewModel" />
+
+    </data>
+</layout>
+

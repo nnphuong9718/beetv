@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="ads"
+            type="com.example.android.architecture.blueprints.beetv.data.models.BAds" />
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.ads.AdsViewModel" />
+
+    </data>
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            app:load="@{ads.image}"
+            android:scaleType="centerCrop" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:focusable="false" />
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+</layout>

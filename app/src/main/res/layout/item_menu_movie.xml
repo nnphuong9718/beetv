@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="movie"
+            type="com.example.android.architecture.blueprints.beetv.data.models.BMovie" />
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.menu.MenuViewModel" />
+
+    </data>
+    <com.example.android.architecture.blueprints.beetv.widgets.ZoomSelectionThumbLayout
+        xmlns:cv="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewmodel.openMovieDetail(movie.id)}"
+        android:layout_marginVertical="18dp"
+        android:padding="@dimen/size_2"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:load="@{movie.cover_image}"
+            android:layout_margin="2dp"
+            android:focusable="false"
+            android:scaleType="centerCrop" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.metro.CornerVew
+            android:id="@+id/tv_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:tag="top"
+            cv:cv_background_color="@color/fern"
+            cv:cv_fill_triangle="false"
+            cv:cv_min_size="60dp"
+            cv:cv_gravity="TOP_LEFT"
+            android:focusable="false"
+            cv:cv_text="무료"
+            cv:cv_text_size="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:background="#85000000"
+            android:focusable="false"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:padding="15px"
+                    android:text="@{movie.name}"
+                    android:textColor="@color/white"
+                    android:focusable="false"
+                    android:textSize="18sp" />
+                <RatingBar
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:theme="@style/RatingBar"
+                    android:numStars="5"
+                    android:clickable="false"
+                    android:layout_marginLeft="3px"
+                    android:layout_marginBottom="@dimen/size_2"
+                    android:stepSize="0.5"
+                    android:visibility="gone"
+                    android:isIndicator="true" />
+                <LinearLayout
+                    android:id="@+id/epScrollview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_marginTop="-8dp"
+                    android:layout_marginBottom="-4dp"
+                    android:padding="5dp"
+                    android:scrollbars="none">
+
+                    <TextView
+                        android:id="@+id/movie_ep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:textSize="15sp"
+
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:fadingEdge="horizontal"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:paddingVertical="2dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="8dp"
+                android:text="@{movie.score}"
+                android:textColor="@color/sunsetOrange"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </com.example.android.architecture.blueprints.beetv.widgets.ZoomSelectionThumbLayout></layout>

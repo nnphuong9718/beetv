@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="440dp"
+    android:layout_height="320dp"
+    android:paddingVertical="@dimen/size_40"
+    android:background="@drawable/bg_noti"
+    android:clipChildren="false"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:focusable="false">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b2b2b"
+        android:textSize="16sp"
+        android:focusable="false"
+        android:layout_marginBottom="@dimen/size_16"
+        android:text="모닝TV 운영 및 정책 이슈"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:focusable="false"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2b2b2b"
+            android:textSize="48sp"
+            android:focusable="false"
+            android:text="공지사항"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#bababa"
+            android:focusable="false"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:textColor="#2b2b2b"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/size_4"
+            android:layout_marginBottom="@dimen/size_16"
+            android:letterSpacing="1.2"
+            android:text="NOTICE"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b2b2b"
+        android:textSize="12sp"
+        android:focusable="false"
+        android:text="고객여러분에게 항상 노력하는 모닝TV가 되겠습니다"/>
+
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:id="@+id/bt_confirm"
+        android:layout_width="@dimen/size_120"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size_30"
+        android:background="@color/black"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:text="@string/confirm"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/alto" />
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+
+</com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderLinearLayout>

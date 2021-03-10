@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="click"
+            type="com.example.android.architecture.blueprints.beetv.modules.search.SearchFragment.ClickProxy" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.search.SearchViewModel" />
+
+    </data>
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:clipChildren="false"
+        android:focusable="false"
+        android:padding="@dimen/size_40">
+
+        <LinearLayout
+            android:id="@+id/layoutEditText"
+            android:layout_width="266dp"
+            android:layout_height="@dimen/size_40"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginTop="@dimen/size_40"
+            android:layout_marginBottom="@dimen/size_5"
+            android:background="@drawable/bg_black_radius_20"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/size_20"
+                android:layout_height="@dimen/size_20"
+                android:layout_marginHorizontal="@dimen/size_10"
+                android:focusable="false"
+                android:src="@drawable/ic_search" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginEnd="@dimen/size_10"
+                android:layout_marginRight="@dimen/size_10"
+                android:backgroundTint="@color/chapter_bkg_color"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+            android:id="@+id/bt_empty"
+            android:layout_width="128dp"
+            android:layout_height="34dp"
+            android:layout_below="@+id/layoutEditText"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginTop="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:focusable="true"
+            android:nextFocusRight="@id/bt_delete"
+            android:nextFocusDown="@id/bt_a"
+            android:onClick="@{()->click.emptySearch()}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:text="@string/empty"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white" />
+        </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+        <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+            android:id="@+id/bt_delete"
+            android:layout_width="128dp"
+            android:layout_height="34dp"
+            android:layout_below="@+id/layoutEditText"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginTop="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_empty"
+            android:layout_toRightOf="@+id/bt_empty"
+            android:background="@drawable/bg_search_focus"
+            android:focusable="true"
+            android:nextFocusRight="@id/rv_result"
+            android:nextFocusDown="@id/bt_d"
+            android:onClick="@{()->click.deleteSearch()}">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/size_20"
+                    android:layout_height="@dimen/size_20"
+                    android:focusable="false"
+                    android:src="@drawable/ic_delete" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_5"
+                    android:focusable="false"
+                    android:text="@string/delete"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_empty"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginVertical="@dimen/size_5"
+            android:focusable="true"
+            app:character="@string/a_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_empty"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toEndOf="@+id/bt_a"
+            android:layout_toRightOf="@+id/bt_a"
+            android:focusable="true"
+            app:character="@string/b_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_empty"
+
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_b"
+            android:layout_toRightOf="@+id/bt_b"
+            android:focusable="true"
+            app:character="@string/c_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_empty"
+
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toEndOf="@+id/bt_c"
+            android:layout_toRightOf="@+id/bt_c"
+            android:focusable="true"
+            app:character="@string/d_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_e"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/bt_empty"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_d"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toRightOf="@+id/bt_d"
+            android:focusable="true"
+            app:character="@string/e_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_f"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_empty"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_e"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toRightOf="@+id/bt_e"
+            android:focusable="true"
+            android:nextFocusRight="@id/rv_result"
+            app:character="@string/f_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search_focus"
+
+            android:layout_below="@+id/bt_a"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:focusable="true"
+            app:character="@string/g_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_a"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toEndOf="@+id/bt_g"
+            android:layout_toRightOf="@+id/bt_g"
+            android:focusable="true"
+            app:character="@string/h_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_i"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_a"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_h"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toRightOf="@+id/bt_h"
+            android:focusable="true"
+            app:character="@string/i_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_j"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_a"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toEndOf="@+id/bt_i"
+            android:layout_toRightOf="@+id/bt_i"
+            android:focusable="true"
+            app:character="@string/j_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_k"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_a"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_j"
+            android:layout_toRightOf="@+id/bt_j"
+            android:focusable="true"
+            app:character="@string/k_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_l"
+            android:layout_width="wrap_content"
+            android:background="@drawable/bg_search_focus"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_a"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_k"
+            android:layout_toRightOf="@+id/bt_k"
+            android:focusable="true"
+            android:nextFocusRight="@id/rv_result"
+            app:character="@string/l_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_g"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:focusable="true"
+
+            app:character="@string/m_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_g"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_m"
+            android:layout_toRightOf="@+id/bt_m"
+            android:focusable="true"
+            app:character="@string/n_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_o"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_g"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginHorizontal="@dimen/size_5"
+
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_n"
+            android:layout_toRightOf="@+id/bt_n"
+            android:focusable="true"
+            app:character="@string/o_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_g"
+
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toEndOf="@+id/bt_o"
+            android:layout_toRightOf="@+id/bt_o"
+            android:focusable="true"
+            app:character="@string/p_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_q"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/bt_g"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toEndOf="@+id/bt_p"
+            android:layout_toRightOf="@+id/bt_p"
+            android:focusable="true"
+            app:character="@string/q_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_g"
+
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_q"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toRightOf="@+id/rv_result"
+            android:focusable="true"
+            android:nextFocusRight="@id/bt_s"
+            app:character="@string/r_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_m"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+
+            android:layout_marginVertical="@dimen/size_5"
+            android:focusable="true"
+            app:character="@string/s_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/bt_m"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_s"
+            android:layout_toRightOf="@+id/bt_s"
+            android:focusable="true"
+            app:character="@string/t_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_u"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_m"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginHorizontal="@dimen/size_5"
+
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_t"
+            android:layout_toRightOf="@+id/bt_t"
+            android:focusable="true"
+            app:character="@string/u_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_m"
+            android:background="@drawable/bg_search_focus"
+
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_u"
+            android:layout_toRightOf="@+id/bt_u"
+            android:focusable="true"
+            app:character="@string/v_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_w"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_m"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_v"
+
+            android:layout_toRightOf="@+id/bt_u"
+            android:focusable="true"
+            app:character="@string/w_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search_focus"
+            android:layout_below="@+id/bt_m"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_w"
+            android:layout_toRightOf="@+id/bt_w"
+            android:focusable="true"
+            android:nextFocusRight="@id/rv_result"
+            app:character="@string/x_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_y"
+            android:layout_width="wrap_content"
+
+            android:background="@drawable/bg_search_focus"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_s"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:focusable="true"
+            app:character="@string/y_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_z"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/bt_s"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_y"
+            android:layout_toRightOf="@+id/bt_y"
+            android:background="@drawable/bg_search_focus"
+            android:focusable="true"
+            app:character="@string/z_en" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_s"
+            android:layout_marginHorizontal="@dimen/size_5"
+
+            android:layout_marginVertical="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toEndOf="@+id/bt_z"
+            android:layout_toRightOf="@+id/bt_z"
+            android:focusable="true"
+            app:character="@string/one" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_s"
+
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_one"
+            android:layout_toRightOf="@+id/bt_one"
+            android:focusable="true"
+            app:character="@string/two" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search_focus"
+
+            android:layout_below="@+id/bt_s"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_two"
+            android:layout_toRightOf="@+id/bt_three"
+            android:focusable="true"
+            app:character="@string/three" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_four"
+            android:layout_width="wrap_content"
+            android:background="@drawable/bg_search_focus"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/bt_s"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_three"
+            android:layout_toRightOf="@+id/bt_three"
+            android:focusable="true"
+            android:nextFocusRight="@id/rv_result"
+            app:character="@string/four" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_five"
+            android:layout_width="wrap_content"
+            android:background="@drawable/bg_search_focus"
+
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_y"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:focusable="true"
+            app:character="@string/five" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_six"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search_focus"
+
+            android:layout_below="@+id/bt_y"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_five"
+            android:layout_toRightOf="@+id/bt_five"
+            android:focusable="true"
+            app:character="@string/six" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_seven"
+            android:layout_width="wrap_content"
+            android:background="@drawable/bg_search_focus"
+
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_y"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_six"
+            android:layout_toRightOf="@+id/bt_six"
+            android:focusable="true"
+            app:character="@string/seven" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_eight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search_focus"
+            android:layout_below="@+id/bt_y"
+            android:layout_marginHorizontal="@dimen/size_5"
+
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_seven"
+            android:layout_toRightOf="@+id/bt_seven"
+            android:focusable="true"
+            app:character="@string/eight" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_nine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search_focus"
+            android:layout_below="@+id/bt_y"
+            android:layout_marginHorizontal="@dimen/size_5"
+
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_eight"
+            android:layout_toRightOf="@+id/bt_eight"
+            android:focusable="true"
+            app:character="@string/nine" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_zero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_y"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_nine"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toRightOf="@+id/bt_nine"
+            android:focusable="true"
+            android:nextFocusRight="@id/rv_result"
+            app:character="@string/zero" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/bg_search_focus"
+            android:layout_below="@+id/bt_five"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:focusable="true"
+            app:character="ㅡ" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/bt_five"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_button3"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toRightOf="@+id/bt_button3"
+            android:focusable="true"
+            app:character="1" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/bg_search_focus"
+            android:layout_below="@+id/bt_five"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_button4"
+            android:layout_toRightOf="@+id/bt_button4"
+            android:focusable="true"
+            app:character="2" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search_focus"
+
+            android:layout_below="@+id/bt_five"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_button5"
+            android:layout_toRightOf="@+id/bt_button5"
+            android:focusable="true"
+            app:character="3" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_five"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_button6"
+            android:layout_toRightOf="@+id/bt_button6"
+            android:background="@drawable/bg_search_focus"
+            android:focusable="true"
+            android:nextFocusRight="@id/rv_result"
+            app:character="4" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_five"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_button7"
+            android:layout_toRightOf="@+id/bt_button7"
+            android:focusable="true"
+            android:background="@drawable/bg_search_focus"
+            android:nextFocusRight="@id/rv_result"
+            app:character="5" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_button3"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:focusable="true"
+            app:character="6" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/bt_button3"
+            android:background="@drawable/bg_search_focus"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_button9"
+            android:layout_toRightOf="@+id/bt_button9"
+            android:focusable="true"
+            app:character="7" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/bg_search_focus"
+            android:layout_below="@+id/bt_button3"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_button10"
+            android:layout_toRightOf="@+id/bt_button10"
+            android:focusable="true"
+            app:character="8" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/bt_button3"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toEndOf="@+id/bt_button11"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toRightOf="@+id/bt_button11"
+            android:focusable="true"
+            app:character="9" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.KeyboardItemView
+            android:id="@+id/bt_button13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_button3"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:layout_toEndOf="@+id/bt_button12"
+            android:layout_toRightOf="@+id/bt_button12"
+            android:focusable="true"
+            android:nextFocusRight="@id/rv_result"
+            app:character="0" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/bt_space"
+            android:layout_width="290dp"
+            android:layout_height="44dp"
+            android:layout_below="@+id/bt_button9"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:background="@color/chapter_bkg_color"
+            android:focusable="true"
+            android:onClick="@{()->click.space()}"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:text="@string/space"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/white" />
+        </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+        <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+            android:id="@+id/bt_korean"
+            android:layout_width="128dp"
+            android:layout_height="@dimen/size_40"
+            android:layout_below="@id/bt_button9"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:background="@drawable/bg_search_focus"
+            android:focusable="true"
+            android:onClick="@{()->click.changeKorea()}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:text="@string/korean"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white" />
+        </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+        <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/bt_english"
+            android:layout_width="128dp"
+            android:layout_height="@dimen/size_40"
+            android:layout_below="@id/bt_button9"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginVertical="@dimen/size_5"
+            android:layout_toRightOf="@+id/bt_korean"
+            android:background="@drawable/bg_search_focus"
+            android:focusable="true"
+            android:nextFocusRight="@id/rv_result"
+            android:onClick="@{()->click.changeEnglish()}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:text="English"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white" />
+        </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/size_40"
+            android:layout_toEndOf="@+id/layoutEditText"
+            android:layout_toRightOf="@+id/layoutEditText"
+            android:clipToPadding="false"
+            android:focusable="false"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_type_movie"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/search_result"
+                    android:textSize="26sp"
+                    android:textColor="@color/alto"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_current_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:textSize="26sp"
+                    android:textColor="@color/sunsetOrange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" / "
+                    android:paddingHorizontal="2dp"
+                    android:textSize="26sp"
+                    android:textColor="@color/alto" />
+
+                <TextView
+                    android:id="@+id/tv_total_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:textSize="26sp"
+                    android:textColor="@color/alto" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_marginTop="@dimen/size_5"
+                android:background="@color/alto"
+                android:focusable="false" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:focusable="false">
+
+                <com.example.android.architecture.blueprints.beetv.widgets.SearchMovieView
+                    android:id="@+id/rv_result2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:clipToPadding="false"
+                    android:layout_marginTop="@dimen/size_32"
+                    android:layout_marginBottom="@dimen/size_12"
+                    android:paddingVertical="@dimen/size_12"
+                    android:focusable="false"/>
+
+<!--                <com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRecycleView-->
+<!--                    android:id="@+id/rv_result"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:clipToPadding="false"-->
+<!--                    android:paddingLeft="@dimen/size_12"-->
+<!--                    android:layout_marginTop="@dimen/size_32"-->
+<!--                    android:paddingVertical="@dimen/size_12"-->
+<!--                    android:focusable="false"/>-->
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:focusable="false"
+                    android:visibility="@{viewmodel.isLoading ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:text="@string/enter_search_team_to_see_result_here"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout>
+</layout>
+

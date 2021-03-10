@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="category"
+            type="com.example.android.architecture.blueprints.beetv.data.models.BCategory" />
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.menu.MenuViewModel" />
+
+    </data>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:focusable="true"
+    android:id="@+id/main"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="26dp"
+    android:paddingVertical="10dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_name"
+        android:focusable="false"
+        android:text="@{category.name}"
+        android:gravity="center_vertical"
+        android:drawablePadding="@dimen/size_10"
+        android:textSize="20sp"
+        android:textColor="@color/alto"/>
+</LinearLayout>
+</layout>

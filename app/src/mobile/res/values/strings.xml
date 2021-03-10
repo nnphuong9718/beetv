@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2019 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">BeeTV-Staging</string>
+    <string name="no_data">No data</string>
+    <string name="loading">LOADING</string>
+    <string name="realtime_broadcasting">Live</string>
+    <string name="movie">Movie</string>
+    <string name="drama">Drama</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="preview_education">Education</string>
+    <string name="child">Kids</string>
+    <string name="search">Search</string>
+    <string name="favorites">Favorites</string>
+    <string name="playback_record">Playback</string>
+    <string name="setting">Setting</string>
+    <string name="name">Name</string>
+    <string name="director">Director</string>
+    <string name="actor">Actor</string>
+    <string name="type">Type</string>
+    <string name="area">Area</string>
+    <string name="year">Year</string>
+    <string name="summary">Summary</string>
+    <string name="play">Play</string>
+    <string name="a_en">a</string>
+    <string name="b_en">b</string>
+    <string name="c_en">c</string>
+    <string name="d_en">d</string>
+    <string name="e_en">e</string>
+    <string name="f_en">f</string>
+    <string name="g_en">g</string>
+    <string name="h_en">h</string>
+    <string name="i_en">i</string>
+    <string name="j_en">j</string>
+    <string name="k_en">k</string>
+    <string name="l_en">l</string>
+    <string name="m_en">m</string>
+    <string name="n_en">n</string>
+    <string name="o_en">o</string>
+    <string name="p_en">p</string>
+    <string name="q_en">q</string>
+    <string name="r_en">r</string>
+    <string name="s_en">s</string>
+    <string name="t_en">t</string>
+    <string name="u_en">u</string>
+    <string name="v_en">v</string>
+    <string name="w_en">w</string>
+    <string name="x_en">x</string>
+    <string name="y_en">y</string>
+    <string name="z_en">z</string>
+    <string name="zero">0</string>
+    <string name="nine">9</string>
+    <string name="eight">8</string>
+    <string name="seven">7</string>
+    <string name="six">6</string>
+    <string name="five">5</string>
+    <string name="four">4</string>
+    <string name="three">3</string>
+    <string name="two">2</string>
+    <string name="one">1</string>
+    <string name="empty">Empty</string>
+    <string name="delete">Delete</string>
+    <string name="korean">Korean</string>
+    <string name="english">English</string>
+    <string name="search_result">Search result</string>
+    <string name="confirm">Confirm</string>
+    <string name="a_ko">ㄱ</string>
+    <string name="b_ko">ㄲ</string>
+    <string name="c_ko">ㄴ</string>
+    <string name="d_ko">ㄷ</string>
+    <string name="e_ko">ㄸ</string>
+    <string name="f_ko">ㄹ</string>
+    <string name="g_ko">ㅁ</string>
+    <string name="h_ko">ㅂ</string>
+    <string name="i_ko">ㅃ</string>
+    <string name="j_ko">ㅅ</string>
+    <string name="k_ko">ㅆ</string>
+    <string name="l_ko">ㅇ</string>
+    <string name="m_ko">ㅈ</string>
+    <string name="n_ko">ㅉ</string>
+    <string name="o_ko">ㅊ</string>
+    <string name="p_ko">ㅋ</string>
+    <string name="q_ko">ㅌ</string>
+    <string name="r_ko">ㅍ</string>
+    <string name="s_ko">ㅎ</string>
+    <string name="t_ko">ㅛ</string>
+    <string name="u_ko">ㅕ</string>
+    <string name="v_ko">ㅑ</string>
+    <string name="w_ko">ㅐ</string>
+    <string name="x_ko">ㅔ</string>
+    <string name="y_ko">ㅗ</string>
+    <string name="z_ko">ㅓ</string>
+    <string name="three_ko">ㅏ</string>
+    <string name="two_ko">ㅣ</string>
+    <string name="one_ko">ㅠ</string>
+    <string name="four_ko">ㅜ</string>
+    <string name="all">All</string>
+    <string name="aspect_ratio">Screen Ratio</string>
+    <string name="player">Player</string>
+    <string name="language">Language</string>
+    <string name="slot">Time</string>
+    <string name="id">ID</string>
+    <string name="service_life">Expired</string>
+    <string name="authority">Login</string>
+    <string name="logout">Logout</string>
+    <string name="would_you_like_to_log_out">Would you like to log out?</string>
+    <string name="are_you_sure_you_want_to_log_out">Are you sure you want to quit?</string>
+    <string name="cancel">Cancel</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="go_back">Back</string>
+    <string name="sign_up">회원가입</string>
+    <string name="register_successfully">Register successfully</string>
+    <string name="login_successfully">You are logged in.</string>
+    <string name="english_ko">English</string>
+    <string name="empty_id_message">ID cannot be empty</string>
+    <string name="empty_password_message">Password cannot be empty</string>
+    <string name="service_remaining_period" formatted="true">%d days</string>
+    <string name="format_date" formatted="true">%d days</string>
+    <string name="empty_keyword_message">Keyword cannot be empty</string>
+    <string name="error_password_incorrect">Password is incorrect</string>
+    <string name="error_id_incorrect">ID is incorrect</string>
+    <string name="unfavorite">Unfavorite</string>
+    <string name="enter_search_team_to_see_result_here">Enter search term/word to see result here</string>
+    <string name="text_search_not_found">No data. Search with another term?</string>
+    <string name="text_no_data_found">No data found!</string>
+    <string name="require_login">Please login to use this function\n Do you want to login?</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="error_upgrade_account">Please upgrade your account to play this media</string>
+    <string name="automatic_resolution" translatable="false">Automatic</string>
+    <string name="title_resolution" translatable="false">Resolution</string>
+    <string name="message_double_back_to_exit">Press one more to exit</string>
+    <string name="space">Space</string>
+    <string name="retry">Retry</string>
+    <string name="no_internet_connection">Server connection failed. Connect again after connecting to the Internet</string>
+    <string name="text_service_period_expired">Service period expired</string>
+    <string name="exit">Exit</string>
+    <string name="playlist">Playlist</string>
+    <string name="update_order">Update order</string>
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core
+        functionality.</string>
+    <string name="permission_rationale">Location permission is needed for core functionality</string>
+    <string name="settings">Settings</string>
+    <string name="play_from_you_end">Play from where you ended</string>
+
+    <string name="play_from_you_start">Play from the beginning</string>
+    <string name="format_speed_video" formatted="true">영상소스 %s kb/s</string>
+    <string name="popular_order">Popular order</string>
+    <string name="error_cannot_play">Cannot play this live</string>
+    <string name="remaining_date">Remaining: </string>
+</resources>

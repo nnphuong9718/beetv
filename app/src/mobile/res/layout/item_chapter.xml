@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cv="http://schemas.android.com/tools" >
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:focusable="true"
+        android:onClick="@{() -> viewmodel.openVideo(video.id)}"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textAlignment="center"
+            android:focusable="false"
+            android:text="@{video.title}"
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white" />
+
+        <com.example.android.architecture.blueprints.beetv.widgets.metro.CornerVew
+            android:id="@+id/tv_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:focusable="false"
+            android:tag="top"
+            cv:cv_background_color="@color/fern"
+            cv:cv_fill_triangle="true"
+            cv:cv_min_size="48dp"
+            cv:cv_gravity="TOP_LEFT"
+            cv:cv_text="무료"
+            cv:cv_text_size="6pt" />
+
+    </RelativeLayout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="video"
+            type="com.example.android.architecture.blueprints.beetv.data.models.BVideo" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.movie_detail.MovieDetailViewModel" />
+
+    </data>
+</layout>

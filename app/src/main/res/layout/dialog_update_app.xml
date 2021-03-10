@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="480dp"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:clipChildren="false"
+    android:gravity="center"
+    android:background="@drawable/bg_black_opacity_stroke_black_2">
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:gravity="center"
+        android:focusable="false"
+
+        android:text="@string/notice"
+        android:textSize="35sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="@color/alto" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size_20"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/size_10"
+        android:focusable="false"
+        android:layout_below="@+id/tv_title"
+
+        android:text="@string/please_watch_after_updating_the_latest_version."
+        android:textSize="19sp"
+        android:textColor="@color/white" />
+
+
+
+    <com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout
+        android:id="@+id/bt_confirm"
+        android:layout_width="@dimen/size_150"
+        android:layout_height="64dp"
+        android:layout_below="@+id/tv_content"
+        android:layout_marginTop="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp"
+        android:background="@color/button_text_focus"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:text="@string/confirm"
+            android:textSize="22sp"
+            android:textColor="@color/alto" />
+
+
+    </com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:id="@+id/progressBar"
+        android:layout_below="@+id/tv_content"
+        android:layout_marginTop="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+</com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRelativeLayout>

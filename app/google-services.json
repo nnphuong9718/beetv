@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "162440012375",
+    "project_id": "beetv-9e8c6",
+    "storage_bucket": "beetv-9e8c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162440012375:android:91448365dd6c4b8764f912",
+        "android_client_info": {
+          "package_name": "com.example.android.architecture.blueprints.master"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162440012375-vsjcnfiba16aidera6prtqiqr5m29mlm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkZyG3YjlEXIcIaYPbKBye8mqOX2sIbPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162440012375-vsjcnfiba16aidera6prtqiqr5m29mlm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162440012375:android:1c432a27c5a3bf6364f912",
+        "android_client_info": {
+          "package_name": "com.example.android.architecture.blueprints.master.mock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162440012375-vsjcnfiba16aidera6prtqiqr5m29mlm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkZyG3YjlEXIcIaYPbKBye8mqOX2sIbPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162440012375-vsjcnfiba16aidera6prtqiqr5m29mlm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

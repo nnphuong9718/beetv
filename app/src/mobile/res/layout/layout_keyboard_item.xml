@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bt_character"
+    android:layout_width="28dp"
+    android:layout_height="28dp"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="4dp"
+    android:background="@color/black"
+    android:focusable="false">
+
+    <TextView
+        android:id="@+id/tv_character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/a_en"
+        android:textAllCaps="true"
+        android:focusable="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/white" />
+</com.example.android.architecture.blueprints.beetv.widgets.metro.MetroItemFrameLayout>

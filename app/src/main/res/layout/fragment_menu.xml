@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <variable
+            name="click"
+            type="com.example.android.architecture.blueprints.beetv.modules.menu.MenuFragment.ClickProxy" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.android.architecture.blueprints.beetv.modules.menu.MenuViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/page_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:focusable="false">
+
+        <LinearLayout
+            android:id="@+id/layoutTime"
+            android:layout_width="195dp"
+            android:layout_height="match_parent"
+            android:background="@color/chapter_bkg_color"
+            android:clipChildren="false"
+            android:focusable="false"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/size_20"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tvClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginTop="-38dp"
+                android:layout_marginBottom="-36dp"
+                android:focusable="false"
+                android:paddingLeft="@dimen/size_28"
+                android:singleLine="true"
+                android:text="@{viewmodel.time}"
+                android:textColor="@color/alto"
+                android:textSize="38sp" />
+
+            <TextView
+                android:id="@+id/tv_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:paddingLeft="@dimen/size_28"
+                android:textColor="@color/alto"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:paddingLeft="@dimen/size_28"
+                android:textColor="@color/alto"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_top"
+                android:layout_width="@dimen/size_20"
+                android:layout_height="@dimen/size_20"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_8"
+                android:focusable="false"
+                android:rotation="180"
+                android:src="@drawable/ic_next"
+                android:visibility="gone" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_menu_item"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/size_24"
+                android:layout_weight="1"
+                android:animateLayoutChanges="false"
+                android:focusable="false"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/size_14"
+                app:items="@{viewmodel.categories}" />
+
+            <ImageView
+                android:id="@+id/iv_bottom"
+                android:layout_width="@dimen/size_28"
+                android:layout_height="@dimen/size_28"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/size_8"
+                android:focusable="false"
+                android:src="@drawable/ic_next"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="@dimen/size_175"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_24"
+                android:layout_marginBottom="@dimen/size_24"
+                android:background="@color/chapter_bkg_color"
+                android:focusable="false"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="@dimen/size_24"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:text="@{viewmodel.positionCurrent}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/sunsetOrange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:text="/"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/sunsetOrange" />
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:text="@{viewmodel.totalList}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/sunsetOrange" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.example.android.architecture.blueprints.beetv.widgets.DynamicListView
+            android:id="@+id/dynamicList"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#CC000000"
+            android:focusable="false"
+            android:orientation="horizontal"
+            android:layout_toEndOf="@+id/layoutTime" />
+
+        <RelativeLayout
+            android:id="@+id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:focusable="false"
+            android:layout_toEndOf="@+id/layoutTime">
+
+            <LinearLayout
+                android:id="@+id/menu_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginHorizontal="@dimen/size_40"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/size_32">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_type_movie"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="00"
+                        android:textColor="@color/alto"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_current_page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:textColor="@color/sunsetOrange"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="2dp"
+                        android:text="/"
+                        android:textColor="@color/alto"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tv_total_page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:textColor="@color/alto"
+                        android:textSize="26sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_marginTop="@dimen/size_5"
+                    android:background="@color/alto"
+                    android:focusable="false" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/list_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/menu_layout"
+                android:layout_marginTop="@dimen/size_32"
+                android:focusable="false">
+
+<!--                <com.example.android.architecture.blueprints.beetv.widgets.metro.DrawingOrderRecycleView-->
+<!--                    android:id="@+id/rv_detail_list"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:clipToPadding="false"-->
+<!--                    android:focusable="false"-->
+<!--                    android:nextFocusDown="@id/rv_detail_list"-->
+<!--                    android:nextFocusUp="@id/rv_detail_list"-->
+<!--                    android:paddingTop="@dimen/size_4"-->
+<!--                    android:paddingHorizontal="@dimen/size_40"-->
+<!--                    android:paddingBottom="@dimen/size_24"-->
+<!--                    app:movies="@{viewmodel.movieList}" />-->
+
+                <com.example.android.architecture.blueprints.beetv.widgets.MovieListView
+                    android:id="@+id/rv_detail_list2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:scrollbars="none"
+                    android:clipToPadding="false"
+                    android:focusable="false"
+                    android:nextFocusUp="@id/rv_detail_list"
+                    android:paddingTop="@dimen/size_4"
+                    android:background="@color/black"
+                    android:layout_marginHorizontal="@dimen/size_32"
+                    android:paddingBottom="@dimen/size_24" />
+
+                <TextView
+                    android:id="@+id/tv_no_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:text="@string/text_no_data_found"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:focusable="false" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_toEndOf="@+id/dynamicList"
+            android:id="@+id/moreLayout"
+            android:layout_centerVertical="true"
+            android:focusable="false"
+            android:layout_marginStart="@dimen/size_20"
+            android:layout_height="wrap_content">
+            <View
+                android:id="@+id/view_background_of_bt_more"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                android:background="@drawable/button_circle_red_2"
+
+                />
+            <ImageView
+                android:id="@+id/bt_more"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                android:padding="@dimen/size_5"
+                android:src="@drawable/ic_back_list"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_toEndOf="@+id/bt_more"
+               android:layout_centerVertical="true"
+                android:textSize="20sp"
+                tools:visibility="visible"
+
+                android:visibility="gone"
+                android:id="@+id/tv_expand"
+                android:layout_marginStart="@dimen/size_5"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/text_expand_playback"/>
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</layout>
+
